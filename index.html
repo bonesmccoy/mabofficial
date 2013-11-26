@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background: url('img/bg.jpg');
+            background-repeat: no-repeat;
+            background-position: 0 0;
+            -moz-background-size: cover;
+            -webkit-background-size: cover;
+            background-size: cover;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .container {
+            position: relative;
+            height:100%;
+        }
+        img {
+            display: block;
+            width: 100%;
+        }
+
+        #stars {
+            margin-top: 20px;
+        }
+        #sea {
+            position: absolute;
+            bottom: 0px;
+			left: -50%;
+			width:200%;
+			height: 170px;
+
+        }
+        .wave {
+            
+            display:block;
+            height: 157px;
+			width:100%;
+        }
+		.front {
+			background: transparent url("img/wave_front.png") repeat-x 0% top;
+			
+		}
+		.medium {
+			background: transparent url("img/wave_medium.png") repeat-x 50% top;
+			margin-top: -10px;
+		}
+		.medium-back {
+			background: transparent url("img/wave_medium-back.png") repeat-x 30% top;
+			margin-top: -20px;
+		}
+		.far {
+			background: transparent url("img/wave_far.png") repeat-x center top;
+			margin-top: -50px;
+			
+		}
+    </style>
+
+    <!-- Behavioral Meta Data -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <script src="js/jquery.js"></script>
+    <script src="js/main.js"></script>
+</head>
+<body>
+<div class="container">
+    <div id="stars">
+        <li class="layer" data-depth="0.30"><img src="img/stars_back.png"></li>
+        <li class="layer" data-depth="0.70"><img src="img/stars_middle.png"></li>
+        <li class="layer" data-depth="0.80"><img src="img/stars_front.png"></li>
+    </div>
+	<div id="moon">
+	
+	</div>
+    <div id="sea">
+        <li class="layer" data-depth="0.20"><div class="wave far"></li>
+        <li class="layer" data-depth="0.40"><div class="wave medium-back"></li>
+        <li class="layer" data-depth="0.60"><div class="wave medium"></li>
+        <li class="layer" data-depth="0.80"><div class="wave front"></div></li>
+    </div>
+</div>
+<!-- Scripts -->
+
+<script src="js/jquery.parallax.js"></script>
+
+<script>
+    $('#stars').parallax();
+	$('#sea').parallax();
+</script>
+</body>
+</html>
