@@ -48,7 +48,7 @@ queue.addEventListener("complete", onQueueLoaded);
 queue.addEventListener("progress", onQueueProgress);
 
 for (var n = 0; n < assets.length; n++) {
-    queue.loadFile("/" + assets[n], false);
+    queue.loadFile(	assets[n], false);
 }
 
 queue.load();
