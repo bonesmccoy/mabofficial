@@ -75,8 +75,32 @@ body {
     height: 519px;
     display: block;
     position: absolute;
-    top:15%;
-    right: 35%;
+    top:5%;
+    right: 30%;
+    z-index: 999;
+
+}
+
+.boat {
+    background: transparent url("img/jecky-boat.png") no-repeat center top;
+    width: 549px;
+    height: 351px;
+    display: block;
+    position: absolute;
+    bottom: 10px;
+    left: 28%;
+    z-index: 999;
+
+}
+
+.cracken {
+    background: transparent url("img/cracken.png") no-repeat center top;
+    width: 413px;
+    height: 380px;
+    display: block;
+    position: absolute;
+    bottom: -57px;
+    right: 25%;
     z-index: 999;
 
 }

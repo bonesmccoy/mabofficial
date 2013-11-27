@@ -2,7 +2,6 @@ var assets = [
 
     "img/bg.jpg",
     "img/moon.png",
-    "img/old",
     "img/stars_back.png",
     "img/stars_front.png",
     "img/stars_middle.png",
