@@ -15,7 +15,7 @@ var assets = [
     "js/parallax.js",
     "js/jquery.parallax.js",
     "js/main.js",
-
+    "css/keyframes.css",
     "css/style.css"
 
 ];

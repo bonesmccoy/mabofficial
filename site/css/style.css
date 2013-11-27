@@ -1,3 +1,5 @@
+
+
 * {
     margin: 0;
     padding: 0;
@@ -60,18 +62,22 @@ body {
 }
 
 .stars.middle {
-    background: transparent url("../img/stars_middle.png") repeat-x 20% top;
+    background: transparent url("../img/stars_middle.png") repeat-x 0% top;
 }
 
 .stars.front {
-    background: transparent url("../img/stars_front.png") repeat-x 0% top;
+    background: transparent url("../img/stars_front.png") repeat-x 30% top;
 }
 
 .moon {
     background: transparent url("../img/moon.png") no-repeat center top;
     width: 370px;
     height: 519px;
+    display: block;
     position: absolute;
+    top:15%;
+    right: 35%;
+    z-index: 999;
 
 }
 
@@ -85,7 +91,7 @@ body {
 
 .wave.front {
     background: transparent url("../img/wave_front.png") repeat-x 0% top;
-    bottom: -10px;
+    bottom: -30px;
 }
 
 .wave.medium {
@@ -94,11 +100,11 @@ body {
 
 .wave.medium-back {
     background: transparent url("../img/wave_medium-back.png") repeat-x 30% top;
-    bottom: 30px;
+    bottom: 40px;
 }
 
 .wave.far {
     background: transparent url("../img/wave_far.png") repeat-x center top;
-    bottom: 40px;
+    bottom: 50px;
 
 }
