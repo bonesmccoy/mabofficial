@@ -1,96 +1,104 @@
-	* {
-	margin: 0;
-	padding: 0;
-}
-body {
-	background: url('../img/bg.jpg');
-	background-repeat: no-repeat;
-	background-position: 0 0;
-	-moz-background-size: cover;
-	-webkit-background-size: cover;
-	background-size: cover;
-	margin: 0;
-	overflow: hidden;
+* {
+    margin: 0;
+    padding: 0;
 }
 
-.container {
-	position: relative;
-	height:100%;
+body {
+    background: #000;
 }
-.wrapper {
+
+#container {
+    display: none;
+}
+
+.wrap {
+    min-height: 560px;
+    position: absolute;
+    overflow: hidden;
     display: table;
     height: 100%;
-    left: 0;
-    min-height: 460px;
-    overflow: hidden;
-    position: absolute;
-    top: 0;
     width: 100%;
+    left: 0;
+    top: 0;
+}
+#scene {
+    left: -50%;
+    width: 200%;
+    height: 567px;
+}
+#scene,
+.layer {
+    display: block;
+    height: 100%;
+    width: 200%;
+    padding: 0;
+    margin: 0;
 }
 
-img {
-	display: block;
-	width: 100%;
+.scene {
+    min-height: 560px;
+    position: relative;
+    overflow: hidden; }
+
+.layer {
+    position: absolute; }
+
+.bg {
+    background: url(../img/bg.jpg) no-repeat center top;
+    background-size: cover;
 }
 
-#stars {
-	left: -50%;
-	width:200%;
-	height:567px;
-}
 
 .stars {
-	display:block;
-	width:100%;
-	height:567px;
+    display: block;
+    width: 100%;
+    height: 567px;
 }
 
-.stars.back{
-	background: transparent url("../img/stars_back.png") repeat-x 0% top;
+.stars.back {
+    background: transparent url("../img/stars_back.png") repeat-x 0% top;
 }
-.stars.middle{
-	background: transparent url("../img/stars_middle.png") repeat-x 20% top;
+
+.stars.middle {
+    background: transparent url("../img/stars_middle.png") repeat-x 20% top;
 }
-.stars.front{
-		background: transparent url("../img/stars_front.png") repeat-x 0% top;
+
+.stars.front {
+    background: transparent url("../img/stars_front.png") repeat-x 0% top;
 }
 
 .moon {
-	background: transparent url("../img/moon.png") no-repeat center top;
-	width:370px;
-	height: 519px;
-	position: absolute;
-	right: 20%;
-	top: 10%
-}
-
-
-#sea {
-	position: absolute;
-	bottom: -20px;
-	left: -50%;
-	width:200%;
-	height: 170px;
+    background: transparent url("../img/moon.png") no-repeat center top;
+    width: 370px;
+    height: 519px;
+    position: absolute;
 
 }
+
 .wave {
-	display:block;
-	height: 157px;
-	width:100%;
+    display: block;
+    height: 157px;
+    width: 100%;
+    position:absolute;
+    bottom: 0;
 }
+
 .wave.front {
-	background: transparent url("../img/wave_front.png") repeat-x 0% top;
+    background: transparent url("../img/wave_front.png") repeat-x 0% top;
+    bottom: -10px;
 }
+
 .wave.medium {
-	background: transparent url("../img/wave_medium.png") repeat-x 50% top;
-	margin-top: -10px;
+    background: transparent url("../img/wave_medium.png") repeat-x 50% top;
 }
+
 .wave.medium-back {
-	background: transparent url("../img/wave_medium-back.png") repeat-x 30% top;
-	margin-top: -20px;
+    background: transparent url("../img/wave_medium-back.png") repeat-x 30% top;
+    bottom: 30px;
 }
+
 .wave.far {
-	background: transparent url("../img/wave_far.png") repeat-x center top;
-	margin-top: -50px;
-	
+    background: transparent url("../img/wave_far.png") repeat-x center top;
+    bottom: 40px;
+
 }
