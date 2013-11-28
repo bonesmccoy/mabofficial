@@ -78,6 +78,7 @@ body {
     top:5%;
     right: 30%;
     z-index: 999;
+    background-size: 100%;
 
 }
 
@@ -90,6 +91,7 @@ body {
     bottom: 10px;
     left: 28%;
     z-index: 999;
+    background-size: 100%;
 
 }
 
@@ -102,6 +104,7 @@ body {
     bottom: -57px;
     right: 25%;
     z-index: 999;
+    background-size: 100%;
 
 }
 
@@ -111,6 +114,7 @@ body {
     width: 100%;
     position:absolute;
     bottom: 0;
+    background-size: 100%;
 }
 
 .wave.front {

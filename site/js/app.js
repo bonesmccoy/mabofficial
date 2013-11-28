@@ -13,11 +13,16 @@ var assets = [
     "js/jquery.js",
     "js/parallax.js",
     "js/jquery.parallax.js",
-    "js/main.js",
+    //"js/main.js",
+
+
     "css/keyframes.css",
     "css/style.css"
 
 ];
+var max_res_w = 1600;
+var min_res_w = 1024;
+var min_res_h = 768;
 
 var scene = {};
 var onQueueProgress = function () {
@@ -25,6 +30,7 @@ var onQueueProgress = function () {
 }
 
 var onQueueLoaded = function () {
+    resizeScene();
     activateStage();
 }
 
