@@ -26,10 +26,12 @@ function resizeScene() {
 
     scala = (current_height / max_res_w) ;
     //console.log(scala);
-    $(".moon").width(370*scala);
-    $(".boat").width(549*scala);
-    $(".cracken").width(413*scala);
+    $(".moon").width(370*scala).height(519*scala);
+    $(".boat").width(549*scala).height(351*scala);
+    $(".cracken").width(413*scala).height(380*scala);
 
+
+    $(".wave").height(157*scala);
     $(".wave.front").css("background-size", (790*scala) + "px");
     $(".wave.medium").css("background-size", (1048*scala) + "px");
     $(".wave.medium-back").css("background-size", (758*scala) + "px");
