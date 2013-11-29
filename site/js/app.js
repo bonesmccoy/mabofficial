@@ -20,9 +20,10 @@ var assets = [
     "css/style.css"
 
 ];
-var max_res_w = 1440;
+var max_res_w = 1600;
 var min_res_w = 1024;
 var min_res_h = 768;
+
 
 var scene = {};
 var onQueueProgress = function () {
