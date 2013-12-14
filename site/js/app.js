@@ -1,7 +1,10 @@
 var assets = [
 
     "img/bg.jpg",
-    "img/moon.png",
+    "img/moon-pj.png",
+    "img/jecky-e-dany.png",
+    "img/cracken.png",
+    "img/stars_bg.png",
     "img/stars_back.png",
     "img/stars_front.png",
     "img/stars_middle.png",
@@ -20,14 +23,14 @@ var assets = [
     "css/style.css"
 
 ];
-var max_res_w = 1600;
+var max_res_w = 1920;
 var min_res_w = 1024;
 var min_res_h = 768;
 
 
 var scene = {};
 var onQueueProgress = function () {
-    document.getElementById('counter').innerHTML = Math.floor(queue.progress * 100) + '%';
+    document.getElementById('perc').innerHTML = Math.floor(queue.progress * 100) + '%';
 }
 
 var onQueueLoaded = function () {

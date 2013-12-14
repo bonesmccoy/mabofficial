@@ -7,12 +7,40 @@
 
 body {
     background: #000;
+    overflow:hidden;
 }
 
 #container {
     display: none;
 }
 
+h1.mainlogo {
+    font-family: de-walpergens-pica, serif;
+    position:absolute;
+    top: 30px;
+    left: 30px;
+    /*margin: -200px 0 0 -300px;*/
+    text-align:center;
+    text-transform: uppercase;
+    font-size:40px;
+    color: #e3d7b3;
+    text-shadow: 2px 1px 3px #aaa;
+
+
+}
+#social_bar {
+    position:absolute;
+    bottom:0;
+    left:0;
+    height: 30px;
+    color: #e3d7b3;
+    text-align: right;
+    background: #000;
+    line-height: 30px;
+    padding-right: 10px;
+    width: 100%;
+
+}
 .wrap {
     min-height: 560px;
     position: absolute;
@@ -56,7 +84,9 @@ body {
     width: 100%;
     height: 567px;
 }
-
+ .stars_background{
+     background: transparent url("img/stars_bg.png") repeat-x 0% top;
+ }
 .stars.back {
     background: transparent url("img/stars_back.png") repeat-x 0% top;
 }
@@ -83,9 +113,9 @@ body {
 }
 
 .boat {
-    background: transparent url("img/jecky-boat.png") no-repeat center top;
-    width: 549px;
-    height: 351px;
+    background: transparent url("img/jecky-e-dany.png") no-repeat center top;
+    width: 572px;
+    height: 337px;
     display: block;
     position: absolute;
     bottom: 6%;
@@ -97,12 +127,12 @@ body {
 
 .cracken {
     background: transparent url("img/cracken.png") no-repeat center top;
-    width: 413px;
-    height: 380px;
+    width: 300px;
+    height: 388px;
     display: block;
     position: absolute;
-    bottom: -10%;
-    right: 25%;
+    bottom: -7%;
+    right: 30%;
     z-index: 999;
     background-size: 100%;
 
@@ -110,7 +140,7 @@ body {
 
 .wave {
     display: block;
-    height: 157px;
+    height: 200px;
     width: 100%;
     position:absolute;
     bottom: 0;
@@ -119,21 +149,22 @@ body {
 
 .wave.front {
     background: transparent url("img/wave_front.png") repeat-x 0% top;
-    bottom: 0%;
+    bottom: -8%;
+    height: 260px;
 }
 
 .wave.medium {
     background: transparent url("img/wave_medium.png") repeat-x 50% top;
-    bottom: 3%;
+    bottom: -6%;
 }
 
 .wave.medium-back {
     background: transparent url("img/wave_medium-back.png") repeat-x 30% top;
-    bottom: 5%;
+    bottom: -2%;
 }
 
 .wave.far {
     background: transparent url("img/wave_far.png") repeat-x center top;
-    bottom: 7%;
+    /*bottom: -7%;*/
 
 }

@@ -4,7 +4,7 @@ var min_res_h = 768;
 
 function activateStage() {
     scene = $('#scene').parallax();
-    $("#counter").fadeOut("fast", function(){
+    $("#loader").fadeOut("fast", function(){
         $("#container").fadeIn();
     });
     $(window).resize(function(){
@@ -28,13 +28,13 @@ function resizeScene() {
     scala = (current_width / max_res_w) ;
     console.log(scala, current_width, window.innerWidth);
     $(".moon").width(370*scala).height(519*scala);
-    $(".boat").width(549*scala).height(351*scala);
-    $(".cracken").width(413*scala).height(380*scala);
+    $(".boat").width(572*scala).height(337*scala);
+    $(".cracken").width(300*scala).height(388*scala);
 
 
-    $(".wave").height(157*scala);
+    $(".wave").height(260*scala);
     $(".wave.front").css("background-size", (790*scala) + "px");
     $(".wave.medium").css("background-size", (1048*scala) + "px");
     $(".wave.medium-back").css("background-size", (758*scala) + "px");
-    $(".wave.far").css("background-size", (437*scala) + "px");
+    $(".wave.far").css("background-size", (115*scala) + "px");
 }
