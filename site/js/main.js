@@ -27,6 +27,11 @@ function resizeScene() {
 
     scala = (current_width / max_res_w) ;
     console.log(scala, current_width, window.innerWidth);
+
+    $(".stars.stars_background").css("background-size", (400*scala) + "px");
+    $(".stars.back").css("background-size", (1757*scala) + "px");
+    $(".stars.middle").css("background-size", (1354*scala) + "px");
+    $(".stars.front").css("background-size", (1431*scala) + "px");
     $(".moon").width(370*scala).height(519*scala);
     $(".boat").width(572*scala).height(337*scala);
     $(".cracken").width(300*scala).height(388*scala);
