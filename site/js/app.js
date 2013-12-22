@@ -12,6 +12,8 @@ var assets = [
     "img/wave_front.png",
     "img/wave_medium-back.png",
     "img/wave_medium.png",
+    "img/social-icons.jpg",
+    "img/social_bg.jpg",
 
     "js/jquery.js",
     "js/parallax.js",

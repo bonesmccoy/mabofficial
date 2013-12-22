@@ -32,15 +32,29 @@ h1.mainlogo {
     position:absolute;
     bottom:0;
     left:0;
-    height: 30px;
-    color: #e3d7b3;
+    height: 37px;
     text-align: right;
-    background: #000;
-    line-height: 30px;
-    padding-right: 10px;
+    line-height: 37px;
+    padding-left: 10px;
+    background: transparent url(img/social_bg.png) repeat-x;
     width: 100%;
 
 }
+#social_bar a {
+    background: transparent url(img/social-icons.png) repeat-x;
+    display:block;
+    float:left;
+    height: 32px;
+    width: 32px;
+    margin-right: 10px;
+}
+#social_bar #facebook {
+    background-position: 0 0;
+
+}#social_bar #mail {
+     background-position: 31px 0;
+ }
+
 .wrap {
     min-height: 560px;
     position: absolute;
