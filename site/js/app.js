@@ -12,10 +12,9 @@ var assets = [
     "img/wave_front.png",
     "img/wave_medium-back.png",
     "img/wave_medium.png",
-    "img/social-icons.jpg",
-    "img/social_bg.jpg",
+    "img/social-icons.png",
+    "img/social_bg.png",
 
-    "js/jquery.js",
     "js/parallax.js",
     "js/jquery.parallax.js",
     //"js/main.js",
@@ -32,7 +31,9 @@ var min_res_h = 768;
 
 var scene = {};
 var onQueueProgress = function () {
-    document.getElementById('perc').innerHTML = Math.floor(queue.progress * 100) + '%';
+    console.log(queue.progress);
+    x = - Math.floor(queue.progress * 73) * 154;
+    $("#counter").css("background-position", "Left " +  x + "px");
 }
 
 var onQueueLoaded = function () {

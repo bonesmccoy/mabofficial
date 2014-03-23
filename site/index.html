@@ -8,7 +8,8 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <script src="//use.edgefonts.net/de-walpergens-pica:n4,i4.js"></script>
-    <script src="http://code.createjs.com/createjs-2013.09.25.min.js"></script>
+    <script src="js/createjs.min.js"></script>
+    <script src="js/jquery.js"></script>
     <script src="js/main.js"></script>
 
     <style>
@@ -27,8 +28,8 @@
         }
         #counter {
             position: absolute;
-            width: 250px;
-            height: 129px;
+            width: 200px;
+            height: 154px;
             top: 50%;
             left: 50%;
             font-size: 40px;
@@ -37,7 +38,7 @@
             text-align: center;
             color: #000;
             text-shadow: 2px 1px 3px #000;
-            background: url(img/counter.png) no-repeat top left;
+            background: url(img/counter_bg.jpg) no-repeat top left;
         }
         #perc {
             font-family: de-walpergens-pica, serif;
@@ -52,7 +53,6 @@
 <body>
 <div id="loader">
     <div id="counter">
-        <div id="perc">0%</div>
     </div>
 </div>
 <div id="container" class="wrap bg">

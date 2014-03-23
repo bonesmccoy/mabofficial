@@ -26,7 +26,7 @@ function resizeScene() {
     $("#container").width(current_width);
 
     scala = (current_width / max_res_w) ;
-    console.log(scala, current_width, window.innerWidth);
+    //console.log(scala, current_width, window.innerWidth);
 
     $(".stars.stars_background").css("background-size", (400*scala) + "px");
     $(".stars.back").css("background-size", (1757*scala) + "px");
