@@ -7,13 +7,19 @@
     <!-- Behavioral Meta Data -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <script src="//use.edgefonts.net/de-walpergens-pica:n4,i4.js"></script>
     <script src="js/createjs.min.js"></script>
     <script src="js/jquery.js"></script>
     <script src="js/main.js"></script>
 
     <style>
      /* just for site bootstrapping */
+        @import url(http://fonts.googleapis.com/css?family=Cabin+Sketch:700|Amatic+SC);
+        /*
+        font-family: 'Fredericka the Great', cursive;
+        font-family: 'Cabin Sketch', cursive;
+        font-family: 'Tangerine', cursive;
+        font-family: 'Amatic SC', cursive;
+        */
         body {
             background: black;
         }
@@ -36,9 +42,9 @@
             margin: -65px 0 0 -125px;
             line-height: 129px;
             text-align: center;
-            color: #000;
+            color: #FFF;
+            font-family: 'Cabin Sketch', cursive;
             text-shadow: 2px 1px 3px #000;
-            background: url(img/counter_bg.jpg) no-repeat top left;
         }
         #perc {
             font-family: de-walpergens-pica, serif;
@@ -52,8 +58,7 @@
 </head>
 <body>
 <div id="loader">
-    <div id="counter">
-    </div>
+    <div id="counter"></div>
 </div>
 <div id="container" class="wrap bg">
     <!-- data-friction-x="0.1" data-friction-y="0.1" data-scalar-x="1" limit-y="0" -->

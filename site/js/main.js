@@ -3,9 +3,10 @@ var min_res_w = 1024;
 var min_res_h = 768;
 
 function activateStage() {
+
     scene = $('#scene').parallax();
-    $("#loader").fadeOut("fast", function(){
-        $("#container").fadeIn();
+    $("#loader").fadeOut(500, function(){
+        $("#container").fadeIn(3000);
     });
     $(window).resize(function(){
         resizeScene()

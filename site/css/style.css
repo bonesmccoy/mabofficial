@@ -15,16 +15,18 @@ body {
 }
 
 h1.mainlogo {
-    font-family: de-walpergens-pica, serif;
+    font-family: 'Cabin Sketch', cursive;
     position:absolute;
     top: 30px;
-    left: 30px;
+    left: 50%;
+    width: 200px;
+    margin-left: -100px;
     /*margin: -200px 0 0 -300px;*/
     text-align:center;
     text-transform: uppercase;
-    font-size:40px;
-    color: #e3d7b3;
-    text-shadow: 2px 1px 3px #aaa;
+    font-size:60px;
+    color: #fbfbfb;
+    text-shadow: 2px 1px 3px #000;
 
 
 }
