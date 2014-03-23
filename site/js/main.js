@@ -34,7 +34,9 @@ function resizeScene() {
     $(".stars.front").css("background-size", (1431*scala) + "px");
     $(".moon").width(370*scala).height(519*scala);
     $(".boat").width(572*scala).height(337*scala);
-    $(".cracken").width(300*scala).height(388*scala);
+    //$(".cracken").width(300*scala).height(388*scala);
+    $(".tentacle").width(200*scala).height(235*scala);
+    $(".tentacle-big").width(248*scala).height(340*scala);
 
 
     $(".wave").height(260*scala);

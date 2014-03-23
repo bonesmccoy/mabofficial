@@ -31,7 +31,6 @@ var min_res_h = 768;
 
 var scene = {};
 var onQueueProgress = function () {
-    console.log(queue.progress);
     x = - Math.floor(queue.progress * 73) * 154;
     $("#counter").css("background-position", "Left " +  x + "px");
 }

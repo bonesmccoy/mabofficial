@@ -182,3 +182,26 @@ h1.mainlogo {
     /*bottom: -7%;*/
 
 }
+
+.tentacle {
+    background: transparent url("img/tentacle.png") no-repeat center top;
+    width: 200px;
+    height: 235px;
+    display: block;
+    position: absolute;
+    bottom: 5%;
+    right: 37%;
+    z-index: 999;
+    background-size: 100%;
+}
+.tentacle-big {
+    background: transparent url("img/tentacle-big.png") no-repeat center top;
+    width: 248px;
+    height: 340px;
+    display: block;
+    position: absolute;
+    bottom: 4%;
+    right: 30%;
+    z-index: 999;
+    background-size: 100%;
+}
