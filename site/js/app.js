@@ -3,7 +3,6 @@ var assets = [
     "img/bg.jpg",
     "img/moon-pj.png",
     "img/jecky-e-dany.png",
-    "img/cracken.png",
     "img/stars_bg.png",
     "img/stars_back.png",
     "img/stars_front.png",
@@ -24,7 +23,7 @@ var assets = [
     "css/style.css"
 
 ];
-var max_res_w = 1920;
+var max_res_w = 1600;
 var min_res_w = 1024;
 var min_res_h = 768;
 

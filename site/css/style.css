@@ -12,6 +12,8 @@ body {
 
 #container {
     display: none;
+    width: 100%;
+    height: 100%;
 }
 
 h1.mainlogo {
@@ -58,7 +60,7 @@ h1.mainlogo {
  }
 
 .wrap {
-    min-height: 560px;
+    /*min-height: 560px;*/
     position: absolute;
     overflow: hidden;
     display: table;
@@ -82,7 +84,7 @@ h1.mainlogo {
 }
 
 .scene {
-    min-height: 560px;
+    /* min-height: 560px; */
     position: relative;
     overflow: hidden; }
 
@@ -117,11 +119,11 @@ h1.mainlogo {
 
 .moon {
     background: transparent url("img/moon-pj.png") no-repeat center top;
-    width: 370px;
-    height: 519px;
+    width: 310px;
+    height: 334px;
     display: block;
     position: absolute;
-    top:5%;
+    top:6%;
     right: 30%;
     z-index: 999;
     background-size: 100%;
@@ -130,8 +132,8 @@ h1.mainlogo {
 
 .boat {
     background: transparent url("img/jecky-e-dany.png") no-repeat center top;
-    width: 572px;
-    height: 337px;
+    width: 458px;
+    height: 270px;
     display: block;
     position: absolute;
     bottom: 6%;
@@ -141,22 +143,9 @@ h1.mainlogo {
 
 }
 
-.cracken {
-    background: transparent url("img/cracken.png") no-repeat center top;
-    width: 300px;
-    height: 388px;
-    display: block;
-    position: absolute;
-    bottom: -7%;
-    right: 30%;
-    z-index: 999;
-    background-size: 100%;
-
-}
-
 .wave {
     display: block;
-    height: 200px;
+    height: 194px;
     width: 100%;
     position:absolute;
     bottom: 0;
@@ -166,7 +155,7 @@ h1.mainlogo {
 .wave.front {
     background: transparent url("img/wave_front.png") repeat-x 0% top;
     bottom: -8%;
-    height: 260px;
+    height: 194px;
 }
 
 .wave.medium {
@@ -187,22 +176,23 @@ h1.mainlogo {
 
 .tentacle {
     background: transparent url("img/tentacle.png") no-repeat center top;
-    width: 200px;
-    height: 235px;
+    width: 160px;
+    height: 188px;
     display: block;
     position: absolute;
-    bottom: 5%;
+    bottom: 2%;
     right: 37%;
     z-index: 999;
     background-size: 100%;
 }
+
 .tentacle-big {
     background: transparent url("img/tentacle-big.png") no-repeat center top;
-    width: 248px;
-    height: 340px;
+    width: 198px;
+    height: 272px;
     display: block;
     position: absolute;
-    bottom: 4%;
+    bottom: 0%;
     right: 30%;
     z-index: 999;
     background-size: 100%;
