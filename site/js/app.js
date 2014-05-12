@@ -3,7 +3,6 @@ var assets = [
     "img/bg.jpg",
     "img/moon-pj.png",
     "img/jecky-e-dany.png",
-    "img/cracken.png",
     "img/stars_bg.png",
     "img/stars_back.png",
     "img/stars_front.png",

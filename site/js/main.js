@@ -11,6 +11,32 @@ function activateStage() {
     $(window).resize(function(){
         resizeScene()
     });
+
+    $("#mail").click(function(){
+        $c_container = $("#contact-form-container");
+
+        $c_container.css({
+            width: 0,
+            height: 0,
+            opacity: 0
+        }).show();
+
+        $c_container.stop().animate({
+            width: 600,
+            height: 400,
+            "marginLeft":  -300,
+            "marginTop":  -200,
+            opacity: 1
+        }, 500, 'linear', function(){
+            $("#contact-form").fadeIn();
+        })
+
+        
+    })
+
+    $("#contact-form #close-btn").click(function(){
+        $("#contact-form-container").fadeOut();
+    });
 }
 
 
