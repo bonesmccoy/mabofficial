@@ -212,8 +212,8 @@ h1.mainlogo {
     position:absolute;
     top: 50%;
     left: 50%;
-    margin-left: -300px;
-    margin-top: -200px;
+    /*margin-left: -300px;
+    margin-top: -200px; */
     width: 600px;
     height: 400px;
     background: url("img/contact-background.png") no-repeat center center;
@@ -239,15 +239,22 @@ h1.mainlogo {
 
 #close-btn {
     font-family: 'Cabin Sketch', cursive;
-      font-size: 26px;
+    font-size: 26px;
     font-weight: bold;
-    width: 24px;
-    height: 24px;
+    width: 26px;
+    height: 26px;
     position: absolute;
-    left: 30px;
-    bottom: 30px;
+    right: -15px;
+    top: -15px;
     cursor:pointer;
     z-index: 200;
+    color: black;
+    background: url("img/contact-background.png") no-repeat center center;
+    border-radius: 26px;
+    padding: 3px;
+    text-align: center;
+    line-height: 26px;
+    border: 2px solid #d7c199;
 }
 #contact-form input {
     background: none;
@@ -255,6 +262,20 @@ h1.mainlogo {
     border-bottom: 1px solid #7c5d21;
     padding: 5px;
     width: 200px;
+    font-family: 'Amatic SC', cursive;
+    font-size: 25px;
+}
+#mail-submit {
+    font-family: 'Amatic SC', cursive;
+    font-size: 28px;
+    cursor: pointer;
+    width: 50px;
+    float: right;
+
+}
+
+.error {
+    color: red;
 }
 
 textarea:focus, input:focus{

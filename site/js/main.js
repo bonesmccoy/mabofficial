@@ -27,16 +27,20 @@ function activateStage() {
             "marginLeft":  -300,
             "marginTop":  -200,
             opacity: 1
-        }, 500, 'linear', function(){
+        }, 400, 'linear', function(){
             $("#contact-form").fadeIn();
         })
 
         
     })
 
-    $("#contact-form #close-btn").click(function(){
-        $("#contact-form-container").fadeOut();
-    });
+    $(".required").focus(function(){
+        $this = $(this);
+        $("#" + $this.attr("id") + "_label").removeClass("error");
+    })
+    $("#contact-form #close-btn").click(close_form);
+
+    $("#mail-submit").click(sendmail)
 }
 
 
@@ -71,4 +75,43 @@ function resizeScene() {
     $(".wave.medium").css("background-size", (1048*scala) + "px");
     $(".wave.medium-back").css("background-size", (758*scala) + "px");
     $(".wave.far").css("background-size", (115*scala) + "px");
+}
+
+function close_form() {
+     $("#contact-form").fadeOut('100', function() {
+            $c_container = $("#contact-form-container");
+            $c_container.stop().animate({
+                width: 0,
+                height: 0,
+                "marginLeft":  0,
+                "marginTop":  0,
+                opacity: 1
+            }, 400, 'linear')
+        });
+}
+function sendmail() {
+    var req = 0;
+    $("#contact-form .required").each(function(){
+        $this = $(this);
+        if ($this.val().trim() == "") {
+            $("#" + $this.attr("id") + "_label").addClass("error");
+            req++;
+        }
+        if (!IsEmail($("#email").val())) {
+            $("#email_label").addClass("error");
+            req++;
+        }
+       
+    })
+    if (req == 0) {
+        $.post("writemab.php", $("#contact-form").serialize(), function(data){
+            console.log(data);
+        })
+    }
+    
+}
+
+function IsEmail(email) {
+    var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    return regex.test(email);
 }
