@@ -116,7 +116,7 @@
 
 
 .swing-3 {
-    -webkit-animation: swing 7s 0.2s infinite alternate-reverse cubic-bezier(0.455, 0.03, 0.515, 0.955);
-    -moz-animation: swing 7s 0.2s infinite alternate-reverse cubic-bezier(0.455, 0.03, 0.515, 0.955);
-    animation: swing 7s 0.2s infinite alternate-reverse cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    -webkit-animation: swing 2s 0.2s infinite alternate-reverse cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    -moz-animation: swing 2s 0.2s infinite alternate-reverse cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    animation: swing 2s 0.2s infinite alternate-reverse cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }
