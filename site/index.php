@@ -14,7 +14,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <script src="js/createjs.min.js"></script>
     <script src="js/jquery.js"></script>
-    <script src="js/main.js"></script>
 
     <style>
      /* just for site bootstrapping */
@@ -75,8 +74,8 @@
         <li class="layer" data-depth="0.20"><div class="stars middle"></div></li>
         <li class="layer" data-depth="0.30"><div class="stars front"></div></li>
         <li class="layer" data-depth="0.20"><div class="wave far waving-2"></div></li>
-        <li class="layer" data-depth="0.50"><div class="tentacle swing" ></div></li>
-        <li class="layer" data-depth="0.50"><div class="tentacle-big swing-3" ></div></li>
+        <li class="layer" data-depth="0.50"><div class="tentacle swing-3" ></div></li>
+        <li class="layer" data-depth="0.50"><div class="tentacle-big swing-2" ></div></li>
         <li class="layer" data-depth="0.40"><div class="wave medium-back waving" ></div></li>
         <li class="layer" data-depth="0.50"><div class="boat waving-2 swing-2" ></div></li>
         <li class="layer" data-depth="0.60"><div class="wave medium waving-2"></div></li>
@@ -125,5 +124,15 @@
     </div>
 </div>
 <script src="js/app.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-12833462-2', 'mabofficial.com');
+  ga('send', 'pageview');
+
+</script>
 </body>
 </html>
