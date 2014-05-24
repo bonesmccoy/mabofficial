@@ -13,6 +13,7 @@
     <style>
      /* just for site bootstrapping */
         @import url(http://fonts.googleapis.com/css?family=Cabin+Sketch:700|Amatic+SC);
+         /*@import url(http://fonts.googleapis.com/css?family=Shadows+Into+Light); */
         /*
         font-family: 'Fredericka the Great', cursive;
         font-family: 'Cabin Sketch', cursive;
@@ -79,7 +80,41 @@
     <h1 class="mainlogo">Mab</h1>
     <div id="social_bar">
         <a id="facebook" href="https://www.facebook.com/mabofficial" title="Mab Official Facebook Page" target="_blank"></a>
-        <a id="mail" href="mailto:info@mabofficial.com"></a>
+        <a id="mail"></a>
+    </div>
+    <div id="contact-form-container">
+        <form action="javascript:void(0);" method="post" id="contact-form" accept-charset="UTF-8" >
+            <div id="mab-stamp"></div>
+            <div id="close-btn">X</div>
+            <div id="form_container">
+                <div class="form-items-left message-container">
+                    <h2>Contact Mab</h2>
+                    <div class="form-item message">
+                        <label for="message" id="message_label">Message *</span></label>
+                        <div>
+                            <textarea id="message" name="message" class="f required"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-items-left">
+                    <div class="name-email-container">
+                        <div class="form-item first-name left">
+                            <label for="first_name" id="first_name_label">Name<span>*</span></label>
+                            <input type="text" id="first_name" name="first_name" class="required">
+                        </div>
+                       <div class="form-item email right">
+                            <label for="email" id="email_label">Email <span>*</span></label>
+                            <input type="text" name="email" id="email" class="required">
+                        </div>
+                      
+                        <div class="form-item submit">
+                            <div id="mail-submit">Send</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br style="clear:both"/>
+        </form>
     </div>
 </div>
 <script src="js/app.js"></script>
