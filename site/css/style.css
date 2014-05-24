@@ -332,3 +332,18 @@ textarea:focus, input:focus{
     float: right;
     width: auto;
 }
+
+#thank-message {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -200px;
+    width: 400px;
+    text-align:center;
+}
+
+#thank-message p {
+    font-family: 'Amatic SC', cursive;
+    font-size: 25px;
+}

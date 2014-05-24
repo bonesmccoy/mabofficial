@@ -86,7 +86,11 @@ function close_form() {
                 "marginLeft":  0,
                 "marginTop":  0,
                 opacity: 1
-            }, 400, 'linear')
+            }, 400, 'linear', function() {
+                $("#form_container").show();
+                $("#thank-message").hide();
+                $("#form_container input, #form_container textarea").each(function(i, el){ $(el).val('')});
+            })
         });
 }
 function sendmail() {
@@ -104,8 +108,12 @@ function sendmail() {
        
     })
     if (req == 0) {
-        $.post("writemab.php", $("#contact-form").serialize(), function(data){
-            console.log(data);
+        $.post("inc/writemab.php", $("#contact-form").serialize(), function(data){
+            console.log(data)
+            $("#form_container").fadeOut('fast', function(){
+                $("#thank-message").show();
+                setTimeout(close_form, 5000)
+            })
         })
     }
     

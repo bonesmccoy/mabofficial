@@ -1,4 +1,9 @@
-<!DOCTYPE html>
+<?php 
+    session_start();
+    $token = md5(time());
+    $_SESSION['token'] = $token;
+
+?><!DOCTYPE html>
 <html>
 <head>
 
@@ -107,13 +112,14 @@
                             <label for="email" id="email_label">Email <span>*</span></label>
                             <input type="text" name="email" id="email" class="required">
                         </div>
-                      
+                        <input type="hidden" name="token" value="<?php echo $token; ?>"/>
                         <div class="form-item submit">
                             <div id="mail-submit">Send</div>
                         </div>
                     </div>
                 </div>
             </div>
+            <div id="thank-message"><h2>Thank you for contacting Mab!</h2><p>We will read your mail soon and give you a reply!</p></div>
             <br style="clear:both"/>
         </form>
     </div>
