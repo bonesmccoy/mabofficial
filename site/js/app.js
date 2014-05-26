@@ -13,10 +13,6 @@ var assets = [
     "img/wave_medium.png",
     "img/social-icons.png",
     "img/social_bg.png",
-
-    "js/parallax.js",
-    "js/jquery.parallax.js",
-    "js/jquery.easing.js",
     "css/keyframes.css",
     "css/style.css"
 
@@ -170,7 +166,7 @@ function sendmail() {
        
     })
     if (req == 0) {
-        $.post("writemab.php", $("#contact-form").serialize(), function(data){
+        $.post("/inc/writemab.php", $("#contact-form").serialize(), function(data){
             console.log(data);
         })
     }
