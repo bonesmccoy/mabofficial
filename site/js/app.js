@@ -1,24 +1,24 @@
 var assets = [
 
-    "img/bg.jpg",
-    "img/moon-pj.png",
-    "img/jecky-e-dany.png",
-    "img/stars_bg.png",
-    "img/stars_back.png",
-    "img/stars_front.png",
-    "img/stars_middle.png",
-    "img/wave_far.png",
-    "img/wave_front.png",
-    "img/wave_medium-back.png",
-    "img/wave_medium.png",
-    "img/social-icons.png",
-    "img/social_bg.png",
+    { id: "", src: "img/bg.jpg"},
+    { id: "", src: "img/moon-pj.png"},
+    { id: "", src: "img/jecky-e-dany.png"},
+    { id: "", src: "img/stars_bg.png"},
+    { id: "", src: "img/stars_back.png"},
+    { id: "", src: "img/stars_front.png"},
+    { id: "", src: "img/stars_middle.png"},
+    { id: "", src: "img/wave_far.png"},
+    { id: "", src: "img/wave_front.png"},
+    { id: "", src: "img/wave_medium-back.png"},
+    { id: "", src: "img/wave_medium.png"},
+    { id: "", src: "img/social-icons.png"},
+    { id: "", src: "img/social_bg.png"},
 
-    "js/parallax.js",
-    "js/jquery.parallax.js",
-    "js/jquery.easing.js",
-    "css/keyframes.css",
-    "css/style.css"
+    { id: "", src: "js/parallax.js"},
+    { id: "", src: "js/jquery.parallax.js"},
+    { id: "", src: "js/jquery.easing.js"},
+    { id: "", src: "css/keyframes.css"},
+    { id: "", src: "css/style.css"}
 
 ];
 var max_res_w = 1600;
@@ -170,7 +170,7 @@ function sendmail() {
        
     })
     if (req == 0) {
-        $.post("writemab.php", $("#contact-form").serialize(), function(data){
+        $.post("/inc/writemab.php", $("#contact-form").serialize(), function(data){
             console.log(data);
         })
     }
