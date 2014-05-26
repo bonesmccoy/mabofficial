@@ -1,24 +1,24 @@
 var assets = [
 
-    { id: "", src: "img/bg.jpg"},
-    { id: "", src: "img/moon-pj.png"},
-    { id: "", src: "img/jecky-e-dany.png"},
-    { id: "", src: "img/stars_bg.png"},
-    { id: "", src: "img/stars_back.png"},
-    { id: "", src: "img/stars_front.png"},
-    { id: "", src: "img/stars_middle.png"},
-    { id: "", src: "img/wave_far.png"},
-    { id: "", src: "img/wave_front.png"},
-    { id: "", src: "img/wave_medium-back.png"},
-    { id: "", src: "img/wave_medium.png"},
-    { id: "", src: "img/social-icons.png"},
-    { id: "", src: "img/social_bg.png"},
+    { id: "bg", src: "img/bg.jpg"},
+    { id: "mooon", src: "img/moon-pj.png"},
+    { id: "jd", src: "img/jecky-e-dany.png"},
+    { id: "sbg", src: "img/stars_bg.png"},
+    { id: "sback", src: "img/stars_back.png"},
+    { id: "sfront", src: "img/stars_front.png"},
+    { id: "smiddle", src: "img/stars_middle.png"},
+    { id: "wfar", src: "img/wave_far.png"},
+    { id: "wfront", src: "img/wave_front.png"},
+    { id: "wmback", src: "img/wave_medium-back.png"},
+    { id: "wmed", src: "img/wave_medium.png"},
+    { id: "sicons", src: "img/social-icons.png"},
+    { id: "sobg", src: "img/social_bg.png"},
 
-    { id: "", src: "js/parallax.js"},
-    { id: "", src: "js/jquery.parallax.js"},
-    { id: "", src: "js/jquery.easing.js"},
-    { id: "", src: "css/keyframes.css"},
-    { id: "", src: "css/style.css"}
+    { id: "px", src: "js/parallax.js"},
+    { id: "jpx", src: "js/jquery.parallax.js"},
+    { id: "jsng", src: "js/jquery.easing.js"},
+    { id: "ckfr", src: "css/keyframes.css"},
+    { id: "cstyle", src: "css/style.css"}
 
 ];
 var max_res_w = 1600;
