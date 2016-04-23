@@ -1,2 +1,6 @@
 .idea/
 site/img/Thumbs.db
+vendor
+.idea/
+cache
+docker/logs/*

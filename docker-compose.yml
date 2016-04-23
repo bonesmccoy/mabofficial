@@ -1,0 +1,24 @@
+version: '2'
+services:
+    app:
+        image: debian:jessie
+        volumes:
+            - ./:/var/www
+        tty: true
+    nginx:
+        build: ./docker/nginx
+        ports:
+            - "80:80"
+        links:
+            - php
+        volumes_from:
+            - app
+        volumes:
+            - ./docker/logs:/var/log/nginx
+    php:
+        build: ./docker/php-fpm
+        expose:
+            - "9000"
+        volumes_from:
+            - app
+        tty: true
