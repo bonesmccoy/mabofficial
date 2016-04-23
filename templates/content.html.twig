@@ -105,7 +105,8 @@
                             <label for="email" id="email_label">Email <span>*</span></label>
                             <input type="text" name="email" id="email" class="required">
                         </div>
-                        <input type="hidden" name="token" value="{{ token }} "/>
+                        <input type="hidden" name="{{ csrfTokenNameKey }}" value="{{ csrfTokenName }} "/>
+                        <input type="hidden" name="{{ csrfTokenValueKey }}" value="{{ csrfTokenValue }} "/>
                         <div class="form-item submit">
                             <div id="mail-submit">Send</div>
                         </div>
