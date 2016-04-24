@@ -1,7 +1,7 @@
 <?php
 
-use \Psr\Http\Message\ServerRequestInterface as Request;
-use \Psr\Http\Message\ResponseInterface as Response;
+use Slim\Http\Request;
+use Slim\Http\Response;
 
 require __DIR__.'/../vendor/autoload.php';
 
@@ -14,7 +14,14 @@ $container->offsetSet('kernel_dir', __DIR__."/..");
 $container->offsetSet('mab_mailto', "empirico@gmail.com");
 
 $container->offsetSet('csrf', function (\Slim\Container $container) {
-    return new \Slim\Csrf\Guard();
+    $guard =  new \Slim\Csrf\Guard();
+    $guard->setFailureCallable(function (Request $request, Response $response, $next) {
+        $request = $request->withAttribute("csrf_success", false);
+
+        return $next($request, $response);
+    });
+
+    return $guard;
 });
 
 $container->offsetSet('view', function (\Slim\Container $container) {
@@ -35,7 +42,12 @@ $container->offsetSet('view', function (\Slim\Container $container) {
 });
 
 $container->offsetSet('mailer', function (\Slim\Container $container) {
-    $transport = Swift_MailTransport::newInstance();
+
+    $transport = Swift_SmtpTransport::newInstance(
+        'mailcatcher',
+        1025
+    );
+
 
     return  Swift_Mailer::newInstance($transport);
 });

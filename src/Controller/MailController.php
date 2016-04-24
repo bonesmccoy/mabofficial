@@ -20,27 +20,37 @@ class MailController extends AbstractController
      */
     public function __invoke(Request $request, Response $response)
     {
-        $mabMailTo = $this->container->get('mab_mailto');
+        $data = [];
 
-        $message = new \Swift_Message(
-            'Mail from Mabofficial',
-            $request->getParam('message')
-        );
-        $message
-            ->setSender($request->getParam('email'), $request->getParam('firstName'))
-            ->addTo($mabMailTo);
+        if (false === $request->getAttribute('csrf_success')) {
+            $data = [
+                'success' => false,
+            ];
+        } else {
 
-        /** @var \Swift_Mailer $mailer */
-        $mailer = $this->container->get('mailer');
-        $mailer->send($message);
+            $mabMailTo = $this->container->get('mab_mailto');
 
-        /** @var Guard $csrf */
-        $csrf = $this->container->get('csrf');
+            $message = new \Swift_Message(
+                'Mail from Mabofficial',
+                $request->getParam('message')
+            );
+            $message
+                ->setSender($request->getParam('email'), $request->getParam('firstName'))
+                ->addTo($mabMailTo);
 
-        $data = [
-            $csrf->getTokenNameKey() => $csrf->getTokenName(),
-            $csrf->getTokenValueKey() => $csrf->getTokenValue(),
-        ];
+            /** @var \Swift_Mailer $mailer */
+            $mailer = $this->container->get('mailer');
+            $mailer->send($message);
+
+            /** @var Guard $csrf */
+            $csrf = $this->container->get('csrf');
+
+            $data = [
+                'success' => true,
+                $csrf->getTokenNameKey() => $csrf->getTokenName(),
+                $csrf->getTokenValueKey() => $csrf->getTokenValue(),
+            ];
+        }
 
         return $response->withJson($data);
     }

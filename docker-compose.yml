@@ -22,3 +22,10 @@ services:
         volumes_from:
             - app
         tty: true
+        links:
+            - mailcatcher
+
+    mailcatcher:
+      image: schickling/mailcatcher
+      ports:
+        - "1080:1080"
