@@ -1,7 +1,13 @@
 {
+    "autoload": {
+        "psr-4": {
+            "Mab\\": "src/"
+        }
+    },
     "require": {
         "slim/slim": "^3.3",
         "slim/twig-view": "^2.1",
-        "slim/csrf": "^0.6.0"
+        "slim/csrf": "^0.6.0",
+        "swiftmailer/swiftmailer": "^5.4"
     }
 }

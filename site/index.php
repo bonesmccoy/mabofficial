@@ -5,46 +5,55 @@ use \Psr\Http\Message\ResponseInterface as Response;
 
 require __DIR__.'/../vendor/autoload.php';
 
-define('KERNEL_DIR', __DIR__."/..");
-
 session_start();
-$app = new \Slim\App();
-$container = $app->getContainer();
+$container = new \Slim\Container();
 
-$container['csrf'] = function ($c) {
+$app = new \Slim\App($container);
+
+$container->offsetSet('kernel_dir', __DIR__."/..");
+$container->offsetSet('mab_mailto', "empirico@gmail.com");
+
+$container->offsetSet('csrf', function (\Slim\Container $container) {
     return new \Slim\Csrf\Guard();
-};
+});
 
-$container['view'] = function ($container) {
+$container->offsetSet('view', function (\Slim\Container $container) {
+
+    $kernelDir = $container->get('kernel_dir');
 
     $view = new \Slim\Views\Twig(
-        KERNEL_DIR.'/templates',
-        [ 'cache' => KERNEL_DIR.'/cache']
+        $kernelDir.'/templates',
+        [ 'cache' => $kernelDir.'/cache']
     );
+
     $view->addExtension(new \Slim\Views\TwigExtension(
-        $container['router'],
-        $container['request']->getUri()
+        $container->get('router'),
+        $container->get('request')->getUri()
     ));
 
     return $view;
-};
+});
+
 
 $app->add($container->get('csrf'));
 
-$app->get('/', function (Request $request, Response $response) {
+$app->get('/', '\Mab\Controller\HomeController');
 
-    $content = [
-        'csrfTokenName' => $this->csrf->getTokenName(),
-        'csrfTokenNameKey' => $this->csrf->getTokenNameKey(),
-        'csrfTokenValueKey' => $this->csrf->getTokenValueKey(),
-        'csrfTokenValue' => $this->csrf->getTokenValue(),
-    ];
+$app->get('/sendmail', function (Request $request, Response $response) {
 
-    return $this->view->render(
-        $response,
-        'content.html.twig',
-        $content
-    );
+    $message = new Swift_Message();
+    $message
+        ->setSubject()
+        ->setSender($request->getAttribute('firstName'))
+        ->addFrom(array($request->getAttribute('email')))
+        ->addTo(array(MAB_MAILTO))
+        ->addBody($request->getAttribute('message'));
+
+    $transport = Swift_MailTransport::newInstance();
+    $mailer = Swift_Mailer::newInstance($transport);
+    $mailer->send($message);
+
+
 });
 
 $app->run();
