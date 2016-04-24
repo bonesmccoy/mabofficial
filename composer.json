@@ -9,6 +9,7 @@
         "slim/twig-view": "^2.1",
         "slim/csrf": "^0.6.0",
         "swiftmailer/swiftmailer": "^5.4",
-        "respect/validation": "^1.0"
+        "respect/validation": "^1.0",
+        "symfony/yaml": "^3.0"
     }
 }

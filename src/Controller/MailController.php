@@ -29,7 +29,7 @@ class MailController extends AbstractController
             ];
         } else {
 
-            $mabMailTo = $this->container->get('mab_mailto');
+            $config = $this->container->get('config');
 
             $subject = 'Mail from Mabofficial';
             $messageBody = trim($request->getParam('message'));
@@ -45,7 +45,7 @@ class MailController extends AbstractController
                 );
                 $message
                     ->setSender($senderEmail, $senderName)
-                    ->addTo($mabMailTo);
+                    ->addTo($config['app']['mailto_recipient']);
 
                 /** @var \Swift_Mailer $mailer */
                 $mailer = $this->container->get('mailer');

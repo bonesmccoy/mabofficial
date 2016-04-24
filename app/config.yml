@@ -1,0 +1,13 @@
+slim:
+  cache_dir: '%root%/cache'
+  templates:
+    path: '%root%/templates'
+    cache: '%root%/cache/twig'
+
+app:
+  mailto_recipient: 'empirico@gmail.com'
+
+mailer:
+  server:
+      host: 'mailcatcher'
+      port: 1025

@@ -1,5 +1,6 @@
 <?php
 
+use Mab\Service\ConfigReader;
 use Slim\Http\Request;
 use Slim\Http\Response;
 
@@ -10,8 +11,15 @@ $container = new \Slim\Container();
 
 $app = new \Slim\App($container);
 
-$container->offsetSet('kernel_dir', __DIR__."/..");
-$container->offsetSet('mab_mailto', "empirico@gmail.com");
+$container->offsetSet('root_dir', __DIR__."/..");
+
+$container->offsetSet('config', function (\Slim\Container $container) {
+    $rootDir = $container->get('root_dir');
+    $configurationFilePath = $rootDir.'/app/config.yml';
+    $configReader = new ConfigReader($container);
+
+    return $configReader->loadConfiguration($rootDir, $configurationFilePath);
+});
 
 $container->offsetSet('csrf', function (\Slim\Container $container) {
     $guard =  new \Slim\Csrf\Guard();
@@ -26,11 +34,12 @@ $container->offsetSet('csrf', function (\Slim\Container $container) {
 
 $container->offsetSet('view', function (\Slim\Container $container) {
 
-    $kernelDir = $container->get('kernel_dir');
+    $templatePath = $container->get('config')['slim']['templates']['path'];
+    $templateCachePath = $container->get('config')['slim']['templates']['cache'];
 
     $view = new \Slim\Views\Twig(
-        $kernelDir.'/templates',
-        [ 'cache' => $kernelDir.'/cache']
+        $templatePath,
+        [ 'cache' => $templateCachePath]
     );
 
     $view->addExtension(new \Slim\Views\TwigExtension(
@@ -43,9 +52,10 @@ $container->offsetSet('view', function (\Slim\Container $container) {
 
 $container->offsetSet('mailer', function (\Slim\Container $container) {
 
+    $config = $container->get('config');
     $transport = Swift_SmtpTransport::newInstance(
-        'mailcatcher',
-        1025
+        $config['mailer']['server']['host'],
+        $config['mailer']['server']['port']
     );
 
 
@@ -53,7 +63,7 @@ $container->offsetSet('mailer', function (\Slim\Container $container) {
 });
 
 $app->add($container->get('csrf'));
+
 $app->get('/', '\Mab\Controller\HomeController');
 $app->post('/sendmail', '\Mab\Controller\MailController');
-
 $app->run();
