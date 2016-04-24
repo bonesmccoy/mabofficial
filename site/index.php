@@ -34,26 +34,14 @@ $container->offsetSet('view', function (\Slim\Container $container) {
     return $view;
 });
 
+$container->offsetSet('mailer', function (\Slim\Container $container) {
+    $transport = Swift_MailTransport::newInstance();
+
+    return  Swift_Mailer::newInstance($transport);
+});
 
 $app->add($container->get('csrf'));
-
 $app->get('/', '\Mab\Controller\HomeController');
-
-$app->get('/sendmail', function (Request $request, Response $response) {
-
-    $message = new Swift_Message();
-    $message
-        ->setSubject()
-        ->setSender($request->getAttribute('firstName'))
-        ->addFrom(array($request->getAttribute('email')))
-        ->addTo(array(MAB_MAILTO))
-        ->addBody($request->getAttribute('message'));
-
-    $transport = Swift_MailTransport::newInstance();
-    $mailer = Swift_Mailer::newInstance($transport);
-    $mailer->send($message);
-
-
-});
+$app->post('/sendmail', '\Mab\Controller\MailController');
 
 $app->run();

@@ -99,14 +99,14 @@
                     <div class="name-email-container">
                         <div class="form-item first-name left">
                             <label for="first_name" id="first_name_label">Name<span>*</span></label>
-                            <input type="text" id="first_name" name="first_name" class="required">
+                            <input type="text" id="first_name" name="firstName" class="required">
                         </div>
                        <div class="form-item email right">
                             <label for="email" id="email_label">Email <span>*</span></label>
                             <input type="text" name="email" id="email" class="required">
                         </div>
-                        <input type="hidden" name="{{ csrfTokenNameKey }}" value="{{ csrfTokenName }} "/>
-                        <input type="hidden" name="{{ csrfTokenValueKey }}" value="{{ csrfTokenValue }} "/>
+                        <input type="hidden" id='csrf_name' name="{{ csrfTokenNameKey }}" value="{{ csrfTokenName }}"/>
+                        <input type="hidden" id='csrf_value' name="{{ csrfTokenValueKey }}" value="{{ csrfTokenValue }}"/>
                         <div class="form-item submit">
                             <div id="mail-submit">Send</div>
                         </div>

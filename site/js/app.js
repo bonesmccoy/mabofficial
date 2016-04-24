@@ -168,7 +168,10 @@ function sendmail() {
             "/sendmail",
             $("#contact-form").serialize(),
             function (data) {
-                console.log(data);
+                if (data.csrf_name && data.csrf_value) {
+                    $('#csrf_name').val(data.csrf_name);
+                    $('#csrf_value').val(data.csrf_value);
+                }
             }
         );
     }

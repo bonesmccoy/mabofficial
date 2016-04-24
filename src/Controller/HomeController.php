@@ -3,29 +3,14 @@
 namespace Mab\Controller;
 
 use Slim\Csrf\Guard;
-use Interop\Container\ContainerInterface;
-use \Psr\Http\Message\ServerRequestInterface as Request;
-use \Psr\Http\Message\ResponseInterface as Response;
+use Slim\Http\Request;
+use Slim\Http\Response;
 
 /**
  * Class HomeController
  */
-class HomeController
+class HomeController extends AbstractController
 {
-    /**
-     * @var ContainerInterface
-     */
-    protected $container;
-
-    /**
-     * HomeController constructor.
-     * @param ContainerInterface $container
-     */
-    public function __construct(ContainerInterface $container)
-    {
-        $this->container = $container;
-    }
-
     /**
      * @param Request  $request
      * @param Response $response
