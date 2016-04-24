@@ -5,6 +5,7 @@ namespace Mab\Controller;
 use Slim\Csrf\Guard;
 use Slim\Http\Request;
 use Slim\Http\Response;
+use Respect\Validation\Validator as v;
 
 /**
  * Class MailController
@@ -30,26 +31,35 @@ class MailController extends AbstractController
 
             $mabMailTo = $this->container->get('mab_mailto');
 
-            $message = new \Swift_Message(
-                'Mail from Mabofficial',
-                $request->getParam('message')
-            );
-            $message
-                ->setSender($request->getParam('email'), $request->getParam('firstName'))
-                ->addTo($mabMailTo);
+            $subject = 'Mail from Mabofficial';
+            $messageBody = trim($request->getParam('message'));
+            $senderEmail = trim($request->getParam('email'));
+            $senderName = trim($request->getParam('firstName'));
 
-            /** @var \Swift_Mailer $mailer */
-            $mailer = $this->container->get('mailer');
-            $mailer->send($message);
+            if (v::email()->validate($senderEmail) &&
+                v::alnum()->notBlank()->validate($senderName)
+            ) {
+                $message = new \Swift_Message(
+                    $subject,
+                    filter_var($messageBody, FILTER_SANITIZE_STRING)
+                );
+                $message
+                    ->setSender($senderEmail, $senderName)
+                    ->addTo($mabMailTo);
 
-            /** @var Guard $csrf */
-            $csrf = $this->container->get('csrf');
+                /** @var \Swift_Mailer $mailer */
+                $mailer = $this->container->get('mailer');
+                $mailer->send($message);
 
-            $data = [
-                'success' => true,
-                $csrf->getTokenNameKey() => $csrf->getTokenName(),
-                $csrf->getTokenValueKey() => $csrf->getTokenValue(),
-            ];
+                /** @var Guard $csrf */
+                $csrf = $this->container->get('csrf');
+
+                $data = [
+                    'success' => true,
+                    $csrf->getTokenNameKey() => $csrf->getTokenName(),
+                    $csrf->getTokenValueKey() => $csrf->getTokenValue(),
+                ];
+            }
         }
 
         return $response->withJson($data);
