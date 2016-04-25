@@ -1,7 +1,8 @@
 {
     "autoload": {
         "psr-4": {
-            "Mab\\": "src/"
+            "Mab\\": "src/",
+            "App\\" : "app/"
         }
     },
     "require": {
